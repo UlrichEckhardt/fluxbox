@@ -53,9 +53,6 @@ class Texture;
 /// (see: <a href="fluxbox_fbwinframe.png">image</a>)
 class FbWinFrame:public FbTk::EventHandler {
 public:
-    // STRICTINTERNAL means it doesn't go external automatically when no titlebar
-    enum TabMode { NOTSET = 0, INTERNAL = 1, EXTERNAL };
-
    /// Toolbar placement on the screen
     enum TabPlacement{
         // top and bottom placement
@@ -107,7 +104,6 @@ public:
     void setFocus(bool newvalue);
 
     void setFocusTitle(const FbTk::BiDiString &str) { m_label.setText(str); }
-    bool setTabMode(TabMode tabmode);
     void updateTabProperties() { alignTabs(); }
 
     /// Alpha settings
@@ -236,6 +232,14 @@ public:
     //@}
 
 private:
+    enum TabMode { NOTSET = 0, INTERNAL = 1, EXTERNAL };
+    /** set tab mode
+     * The function returns whether the client needs to be moved in order
+     * to reflect the changed state. Setting the tab mode to "NOTSET" forces
+     * an update while keeping the current settings.
+     */
+    bool setTabMode(TabMode tabmode);
+
     void redrawTitlebar();
 
     /// reposition titlebar items
