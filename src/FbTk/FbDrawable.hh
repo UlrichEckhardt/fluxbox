@@ -23,11 +23,12 @@
 #define FBTK_FBDRAWABLE_HH
 
 #include <X11/Xlib.h>
+#include "NotCopyable.hh"
 
 namespace FbTk {
 
 /// Basic drawing functions for X drawables
-class FbDrawable {
+class FbDrawable: private NotCopyable {
 public:
     FbDrawable();
     virtual ~FbDrawable() { }

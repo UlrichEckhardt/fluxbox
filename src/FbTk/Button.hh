@@ -23,7 +23,6 @@
 #define FBTK_BUTTON_HH
 
 #include "EventHandler.hh"
-#include "NotCopyable.hh"
 #include "RefCount.hh"
 #include "FbWindow.hh"
 #include "Command.hh"
@@ -34,8 +33,7 @@ namespace FbTk {
 
 class Theme;
 
-class Button:public FbTk::FbWindow, public EventHandler,
-             private NotCopyable {
+class Button:public FbTk::FbWindow, public EventHandler {
 public:
     Button(int screen_num, int x, int y, unsigned int width, unsigned int height);
     Button(const FbWindow &parent, int x, int y, unsigned int width, unsigned int height);

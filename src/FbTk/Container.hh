@@ -25,7 +25,6 @@
 
 #include "FbWindow.hh"
 #include "EventHandler.hh"
-#include "NotCopyable.hh"
 #include "Orientation.hh"
 
 #include <list>
@@ -35,7 +34,7 @@ namespace FbTk {
 
 class Button;
 
-class Container: public FbWindow, public EventHandler, private NotCopyable {
+class Container: public FbWindow, public EventHandler {
 public:
     // LEFT, RIGHT => fixed total width, fixed icon size
     // RELATIVE => fixed total width, relative/variable icon size
