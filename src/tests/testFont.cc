@@ -130,8 +130,7 @@ int main(int argc, char **argv) {
     string background("white");
     string foreground("black");
 
-    int a;
-    for (a = 1; a < argc; ++a) {
+    for (int a = 1; a < argc; ++a) {
         if (strcmp("-display", argv[a]) == 0 && a + 1 < argc) {
             displayname = argv[++a];
         } else if (strcmp("-orient", argv[a]) == 0) {
@@ -160,7 +159,7 @@ int main(int argc, char **argv) {
     App app(displayname.c_str(), foreground, background);
     app.show();
 
-    for (a = 0; a < texts_and_fonts.size(); ++a) {
+    for (size_t a = 0; a < texts_and_fonts.size(); ++a) {
 
         vector<string> tf;
         FbTk::StringUtil::stringtok(tf, texts_and_fonts[a], "|");

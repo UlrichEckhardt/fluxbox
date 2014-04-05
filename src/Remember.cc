@@ -1193,16 +1193,16 @@ void Remember::rememberAttrib(WinClient &winclient, Attribute attrib) {
         app->rememberHead(win->screen().getHead(win->fbWindow()));
         break;
     case REM_DIMENSIONS: {
-        head = win->screen().getHead(win->fbWindow());
-        percx = win->screen().calRelativeDimensionWidth(head, win->normalWidth());
-        percy = win->screen().calRelativeDimensionHeight(head, win->normalHeight());
+        int head = win->screen().getHead(win->fbWindow());
+        int percx = win->screen().calRelativeDimensionWidth(head, win->normalWidth());
+        int percy = win->screen().calRelativeDimensionHeight(head, win->normalHeight());
         app->rememberDimensions(percx, percy, true, true);
         break;
     }
     case REM_POSITION: {
-        head = win->screen().getHead(win->fbWindow());
-        percx = win->screen().calRelativePositionWidth(head, win->normalX());
-        percy = win->screen().calRelativePositionHeight(head, win->normalY());
+        int head = win->screen().getHead(win->fbWindow());
+        int percx = win->screen().calRelativePositionWidth(head, win->normalX());
+        int percy = win->screen().calRelativePositionHeight(head, win->normalY());
         app->rememberPosition(percx, percy, true, true);
         break;
     }

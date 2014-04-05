@@ -562,19 +562,16 @@ void renderEllipticGradient(bool interlaced,
     const double sh = 1.0 / (h2 * h2);
 
     size_t i;
-    int x;
-    int y;
-    double _x;
-    double _y;
-    double d;
+    unsigned x;
+    unsigned y;
 
-    for (i = 0, y = 0; y < static_cast<int>(height); ++y) {
-        for (x = 0; x < static_cast<int>(width); ++x, ++i) {
+    for (i = 0, y = 0; y < height; ++y) {
+        for (x = 0; x < width; ++x, ++i) {
 
-            _x = x - w2;
-            _y = y - h2;
+            const double _x = x - w2;
+            const double _y = y - h2;
 
-            d = ((_x * _x * sw) + (_y * _y * sh)) / 2.0;
+            const double d = ((_x * _x * sw) + (_y * _y * sh)) / 2.0;
 
             rgba[i].r = static_cast<unsigned char>(r - (d * dr));
             rgba[i].g = static_cast<unsigned char>(g - (d * dg));
