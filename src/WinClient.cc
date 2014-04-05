@@ -132,7 +132,7 @@ WinClient::WinClient(Window win, BScreen &screen, FluxboxWindow *fbwin):
 }
 
 WinClient::~WinClient() {
-    fbdbg<<__FILE__<<"(~"<<__FUNCTION__<<")[this="<<this<<"]"<<endl;
+    fbdbg<<__FILE__<<"("<<__FUNCTION__<<")[this="<<this<<"]"<<endl;
 
     FbTk::EventManager::instance()->remove(window());
     Fluxbox *fluxbox = Fluxbox::instance();

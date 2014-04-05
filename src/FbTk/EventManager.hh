@@ -34,7 +34,7 @@ class EventHandler;
    singleton mediator for EventHandlers
 */
 class EventManager {
-public:	
+public:
     static EventManager *instance();
 
     void handleEvent(XEvent &ev);

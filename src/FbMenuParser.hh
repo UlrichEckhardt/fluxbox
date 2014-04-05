@@ -46,7 +46,7 @@ public:
 private:
     bool nextLine();
 
-    mutable std::ifstream m_file;
+    std::ifstream m_file;
     int m_row;
     int m_curr_pos;
     std::string m_curr_line;

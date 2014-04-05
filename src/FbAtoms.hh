@@ -29,6 +29,7 @@ class FbAtoms {
 public:
     ~FbAtoms();
 
+    // get singleton instance
     static FbAtoms *instance();
 
     Atom getWMChangeStateAtom() const { return xa_wm_change_state; }
@@ -44,6 +45,7 @@ public:
     Atom getFluxboxAttributesAtom() const { return blackbox_attributes; }
 
 private:
+    // private constructor, use instance() instead
     FbAtoms();
 
     Atom blackbox_attributes;
