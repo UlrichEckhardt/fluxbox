@@ -51,13 +51,13 @@ public:
     } CapStyle;
 
     /// for FbTk drawable
-    explicit GContext(const FbTk::FbDrawable &drawable);
+    explicit GContext(const FbDrawable &drawable);
     /// for X drawable
     explicit GContext(Drawable drawable);
-    GContext(Drawable d, const FbTk::GContext &gc);
+    GContext(Drawable d, const GContext &gc);
     virtual ~GContext();
 
-    void setForeground(const FbTk::Color &color) {
+    void setForeground(const Color &color) {
         setForeground(color.pixel());
     }
 
@@ -66,7 +66,7 @@ public:
                        pixel_value);
     }
 
-    void setBackground(const FbTk::Color &color) {
+    void setBackground(const Color &color) {
         setBackground(color.pixel());
     }
 
@@ -78,12 +78,12 @@ public:
         XSetTile(m_display, m_gc, draw);
     }
 
-    void setTile(const FbTk::FbPixmap &draw) {
+    void setTile(const FbPixmap &draw) {
         setTile(draw.drawable());
     }
 
     /// not implemented
-    void setFont(const FbTk::Font &) {}
+    void setFont(const Font &) {}
 
     /// set font id
     void setFont(int fid) {

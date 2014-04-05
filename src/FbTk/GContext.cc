@@ -31,7 +31,7 @@ namespace FbTk {
 
 Display *GContext::m_display = 0;
 
-GContext::GContext(const FbTk::FbDrawable &drawable):
+GContext::GContext(const FbDrawable &drawable):
     m_gc(XCreateGC(drawable.display(), drawable.drawable(), 0, 0)) {
 
     if (m_display == 0)
@@ -41,20 +41,20 @@ GContext::GContext(const FbTk::FbDrawable &drawable):
 }
 
 GContext::GContext(Drawable drawable):
-    m_gc(XCreateGC(m_display != 0 ? m_display : FbTk::App::instance()->display(),
+    m_gc(XCreateGC(m_display != 0 ? m_display : App::instance()->display(),
                    drawable,
                    0, 0)) {
     if (m_display == 0)
-        m_display = FbTk::App::instance()->display();
+        m_display = App::instance()->display();
     setGraphicsExposure(false);
 }
 
 GContext::GContext(Drawable d, const GContext &gc):
-    m_gc(XCreateGC(m_display != 0 ? m_display : FbTk::App::instance()->display(),
+    m_gc(XCreateGC(m_display != 0 ? m_display : App::instance()->display(),
                    d,
                    0, 0)) {
     if (m_display == 0)
-        m_display = FbTk::App::instance()->display();
+        m_display = App::instance()->display();
     setGraphicsExposure(false);
     copy(gc);
 }
@@ -65,7 +65,7 @@ GContext::~GContext() {
 }
 
 /// not implemented!
-//void GContext::setFont(const FbTk::Font &font) {
+//void GContext::setFont(const Font &font) {
     //!! TODO
 //}
 void GContext::copy(GC gc) {
