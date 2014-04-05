@@ -134,7 +134,7 @@ public:
     typedef std::list<WinClient *> ClientList;
 
     /// create a window from a client
-    FluxboxWindow(WinClient &client);
+    explicit FluxboxWindow(WinClient &client);
 
     virtual ~FluxboxWindow();
 

@@ -37,7 +37,7 @@ namespace FbCommands {
 /// executes a system command
 class ExecuteCmd: public FbTk::Command<void> {
 public:
-    ExecuteCmd(const std::string &cmd, int screen_num = -1);
+    explicit ExecuteCmd(const std::string &cmd, int screen_num = -1);
     void execute();
     /**
      * same as execute but returns pid

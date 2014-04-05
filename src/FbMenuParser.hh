@@ -30,7 +30,7 @@
 class FbMenuParser: public FbTk::Parser {
 public:
     FbMenuParser():m_row(0), m_curr_pos(0), m_curr_token(TYPE) {}
-    FbMenuParser(const std::string &filename):m_row(0), m_curr_pos(0),
+    explicit FbMenuParser(const std::string &filename):m_row(0), m_curr_pos(0),
                                               m_curr_token(TYPE) { open(filename); }
     ~FbMenuParser() { close(); }
 

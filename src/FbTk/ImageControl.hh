@@ -41,7 +41,7 @@ class Texture;
 /// Holds screen info, color tables and caches textures
 class ImageControl: private NotCopyable {
 public:
-    ImageControl(int screen_num, int colors_per_channel = 4,
+    explicit ImageControl(int screen_num, int colors_per_channel = 4,
                   unsigned long cache_timeout = 300000l, unsigned long cache_max = 200l);
     virtual ~ImageControl();
 
