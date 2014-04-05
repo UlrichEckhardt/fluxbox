@@ -32,7 +32,7 @@ namespace FbTk {
 class BorderTheme {
 public:
     BorderTheme(Theme &theme, const std::string &name, const std::string &altname);
-    virtual ~BorderTheme() { }
+    ~BorderTheme() { }
 
     int width() const { return *m_width; }
     const Color &color() const { return *m_color; }
