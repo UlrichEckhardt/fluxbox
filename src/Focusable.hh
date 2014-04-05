@@ -36,7 +36,7 @@ class FluxboxWindow;
  */
 class Focusable: public FbTk::ITypeAheadable {
 public:
-    Focusable(BScreen &scr, FluxboxWindow *fbwin = 0):
+    explicit Focusable(BScreen &scr, FluxboxWindow *fbwin = 0):
         m_screen(scr), m_fbwin(fbwin),
         m_instance_name("fluxbox"), m_class_name("fluxbox"),
         m_focused(false), m_attention_state(false),

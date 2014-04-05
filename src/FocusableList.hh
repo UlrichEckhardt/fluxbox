@@ -48,7 +48,7 @@ public:
         STATIC_ORDER = 0x02  ///< use creation order instead of focused order
     };
 
-    FocusableList(BScreen &scr): m_pat(0), m_parent(0), m_screen(scr) { }
+    explicit FocusableList(BScreen &scr): m_pat(0), m_parent(0), m_screen(scr) { }
     FocusableList(BScreen &scr, const std::string & pat);
     FocusableList(BScreen &scr, const FocusableList &parent,
                   const std::string & pat);

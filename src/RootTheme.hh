@@ -39,7 +39,7 @@ public:
     /// constructor
     /// @param resmanager resource manager for finding specific resources
     /// @param image_control for rendering background texture
-    RootTheme(FbTk::ImageControl &image_control);
+    explicit RootTheme(FbTk::ImageControl &image_control);
     ~RootTheme();
 
     bool fallback(FbTk::ThemeItem_base &item);

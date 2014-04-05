@@ -35,7 +35,7 @@ namespace FbTk {
 class MenuTheme: public Theme, public ThemeProxy<MenuTheme> {
 public:
     enum BulletType { EMPTY, SQUARE, TRIANGLE, DIAMOND};
-    MenuTheme(int screen_num);
+    explicit MenuTheme(int screen_num);
     virtual ~MenuTheme();
 
     void reconfigTheme();

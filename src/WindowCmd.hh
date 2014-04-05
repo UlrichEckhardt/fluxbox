@@ -54,7 +54,7 @@ template <typename ReturnType=void>
 class WindowCmd: public WindowCmd_base, public FbTk::Command<void> {
 public:
     typedef ReturnType (FluxboxWindow::* Action)();
-    WindowCmd(Action a):m_action(a) {}
+    explicit WindowCmd(Action a):m_action(a) {}
     void execute() { 
         if (window() != 0)
             (*window().*m_action)();
