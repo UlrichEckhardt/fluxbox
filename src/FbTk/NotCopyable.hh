@@ -32,7 +32,7 @@ class NotCopyable
 {
 protected:
     NotCopyable() {}
-    virtual ~NotCopyable() { }
+    ~NotCopyable() {}
 private:
     NotCopyable(const NotCopyable &rhs); // copy constructor
     NotCopyable &operator=(const NotCopyable &rhs); // assignment operator
