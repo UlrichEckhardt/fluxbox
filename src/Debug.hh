@@ -5,7 +5,7 @@
 #include <iostream>
 #define fbdbg std::cerr<<__FILE__<<"("<<__LINE__<< "): "
 #else
-#define fbdbg if (false) std::cerr
+#define fbdbg if (true) {} else std::cerr
 #endif // DEBUG
 
 #endif // DEBUG_HH
