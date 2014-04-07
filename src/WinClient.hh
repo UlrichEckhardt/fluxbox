@@ -127,20 +127,15 @@ public:
 
     static const int PropMwmHintsElements = 3;
 
-    /**
-       !! TODO !!
-       remove or move these to private
-     */
-
-    WinClient *transient_for; // which window are we a transient for?
-    std::list<WinClient *> transients;  // which windows are our transients?
     Window window_group;
 
- 
     int old_bw;
     unsigned long initial_state, normal_hint_flags;
 
 private:
+    WinClient *transient_for; // which window are we a transient for?
+    TransientList transients;  // which windows are our transients?
+
     /// removes client from any waiting list and clears empty waiting lists
     void removeTransientFromWaitingList();
 
