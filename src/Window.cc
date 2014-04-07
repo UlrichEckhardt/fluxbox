@@ -1270,17 +1270,18 @@ bool FluxboxWindow::focus() {
     // FocusControl::revertFocus will return before FocusIn events arrive
     m_screen.focusControl().setScreenFocusedWindow(*m_client);
 
+    WinClient::TransientList const& transients = m_client->transientList();
 
     fbdbg<<"FluxboxWindow::"<<__FUNCTION__<<" isModal() = "<<m_client->isModal()<<endl;
-    fbdbg<<"FluxboxWindow::"<<__FUNCTION__<<" transient size = "<<m_client->transients.size()<<endl;
+    fbdbg<<"FluxboxWindow::"<<__FUNCTION__<<" transient size = "<<transients.size()<<endl;
 
-    if (!m_client->transients.empty() && m_client->isModal()) {
+    if (!transients.empty() && m_client->isModal()) {
         fbdbg<<__FUNCTION__<<": isModal and have transients client = "<<
             hex<<m_client->window()<<dec<<endl;
         fbdbg<<__FUNCTION__<<": this = "<<this<<endl;
 
-        WinClient::TransientList::iterator it = m_client->transients.begin();
-        WinClient::TransientList::iterator it_end = m_client->transients.end();
+        WinClient::TransientList::const_iterator it = transients.begin();
+        WinClient::TransientList::const_iterator it_end = transients.end();
         for (; it != it_end; ++it) {
             fbdbg<<__FUNCTION__<<": transient 0x"<<(*it)<<endl;
             if ((*it)->isStateModal())

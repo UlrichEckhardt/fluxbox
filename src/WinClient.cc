@@ -80,11 +80,11 @@ WinClient::TransientWaitMap WinClient::s_transient_wait;
 
 WinClient::WinClient(Window win, BScreen &screen, FluxboxWindow *fbwin):
         Focusable(screen, fbwin), FbTk::FbWindow(win),
-                     transient_for(0),
                      window_group(0),
                      old_bw(0),
                      initial_state(0),
                      normal_hint_flags(0),
+                     transient_for(0),
                      m_modal_count(0),
                      m_modal(false),
                      accepts_input(false),
