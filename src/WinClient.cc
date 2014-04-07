@@ -86,7 +86,6 @@ WinClient::WinClient(Window win, BScreen &screen, FluxboxWindow *fbwin):
                      old_bw(0),
                      initial_state(0),
                      normal_hint_flags(0),
-                     wm_hint_flags(0),
                      m_modal_count(0),
                      m_modal(false),
                      accepts_input(false),
@@ -376,7 +375,6 @@ void WinClient::updateWMHints() {
     window_group = None;
     initial_state = NormalState;
     if (wmhint) {
-        wm_hint_flags = wmhint->flags;
         /*
          * ICCCM 4.1.7
          *---------------------------------------------
