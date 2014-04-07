@@ -138,7 +138,7 @@ public:
 
  
     int old_bw;
-    unsigned long initial_state, normal_hint_flags, wm_hint_flags;
+    unsigned long initial_state, normal_hint_flags;
 
 private:
     /// removes client from any waiting list and clears empty waiting lists
