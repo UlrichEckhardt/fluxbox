@@ -1067,12 +1067,7 @@ void Slit::loadClientList(const char *filename) {
 
     ifstream file(real_filename.c_str());
     string name;
-    while (! file.eof()) {
-        name.clear();
-        getline(file, name); // get the entire line
-        if (name.empty())
-            continue;
-
+    while (getline(file, name)) { // get the entire line
         // remove whitespaces from start and end
         FbTk::StringUtil::removeFirstWhitespace(name);
 

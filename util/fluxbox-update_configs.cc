@@ -675,10 +675,8 @@ string read_file(const string& filename) {
         return whole_file;
 
     string linebuffer;
-    while (!infile.eof()) {
-        getline(infile, linebuffer);
+    while (getline(infile, linebuffer))
         whole_file += linebuffer + "\n";
-    }
     infile.close();
 
     file_cache[filename] = whole_file;
