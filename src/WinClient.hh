@@ -127,12 +127,12 @@ public:
 
     static const int PropMwmHintsElements = 3;
 
-    Window window_group;
-
     int old_bw;
     unsigned long initial_state, normal_hint_flags;
 
 private:
+    Window window_group;
+
     WinClient *transient_for; // which window are we a transient for?
     TransientList transients;  // which windows are our transients?
 
