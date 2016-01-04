@@ -34,21 +34,21 @@ class Font;
 class GContext {
 public:
 
-    typedef enum { JOINMITER= JoinMiter,
+    enum JoinStyle { JOINMITER= JoinMiter,
                    JOINROUND= JoinRound,
                    JOINBEVEL= JoinBevel
-    } JoinStyle;
+    };
 
-    typedef enum { LINESOLID= LineSolid,
+    enum LineStyle { LINESOLID= LineSolid,
                    LINEONOFFDASH= LineOnOffDash,
                    LINEDOUBLEDASH= LineDoubleDash
-    } LineStyle;
+    };
 
-    typedef enum { CAPNOTLAST= CapNotLast,
+    enum CapStyle { CAPNOTLAST= CapNotLast,
                    CAPBUTT= CapButt,
                    CAPROUND= CapRound,
                    CAPPROJECTING= CapProjecting
-    } CapStyle;
+    };
 
     /// for FbTk drawable
     explicit GContext(const FbDrawable &drawable);
