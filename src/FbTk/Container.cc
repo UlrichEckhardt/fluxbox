@@ -20,6 +20,11 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+/* FbTk::Container class
+Window class that contains buttons. Used in class FbWinFrame to hold the
+buttons to e.g. close or maximize the window and in class IconbarTool for
+buttons to switch desktops.
+*/
 #include "Container.hh"
 
 #include "Button.hh"

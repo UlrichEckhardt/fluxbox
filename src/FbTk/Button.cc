@@ -19,11 +19,18 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+/* FbTk::Button class
+The buttons are e.g. used by the buttons in the window border to
+close/maximize/minimize but also the buttons in the taskbar to switch
+desktops.
+*/
+
 #include "Button.hh"
 
 #include "Command.hh"
 #include "EventManager.hh"
 #include "App.hh"
+#include <iostream>
 
 namespace FbTk {
 
@@ -40,10 +47,10 @@ Button::Button(int screen_num, int x, int y,
     mark_if_deleted(0) {
 
     // add this to eventmanager
-    FbTk::EventManager::instance()->add(*this, *this); 
+    FbTk::EventManager::instance()->add(*this, *this);
 }
 
-Button::Button(const FbWindow &parent, int x, int y, 
+Button::Button(const FbWindow &parent, int x, int y,
                unsigned int width, unsigned int height):
     FbWindow(parent, x, y, width, height,
              ExposureMask | ButtonPressMask | ButtonReleaseMask |
@@ -83,7 +90,7 @@ void Button::setPressedColor(const FbTk::Color &color) {
 
 void Button::setBackgroundColor(const Color &color) {
     m_background_pm = 0; // we're using background color now
-    m_background_color = color;    
+    m_background_color = color;
     FbTk::FbWindow::setBackgroundColor(color);
 }
 
@@ -94,10 +101,10 @@ void Button::setBackgroundPixmap(Pixmap pm) {
 
 
 void Button::enterNotifyEvent(XCrossingEvent &ce){
-		
+    std::cerr<<"entering button "<<this<<std::endl;
 }
 void Button::leaveNotifyEvent(XCrossingEvent &ce){
-		
+    std::cerr<<"leaving button "<<this<<std::endl;
 }
 
 void Button::buttonPressEvent(XButtonEvent &event) {
@@ -109,8 +116,8 @@ void Button::buttonPressEvent(XButtonEvent &event) {
         update = true;
         FbTk::FbWindow::setBackgroundColor(m_pressed_color);
     }
-        
-    m_pressed = true;    
+
+    m_pressed = true;
     if (update) {
         clear();
     }
