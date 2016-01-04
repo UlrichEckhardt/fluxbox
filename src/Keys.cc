@@ -311,10 +311,8 @@ void Keys::reload() {
 
     unsigned int current_line = 0; //so we can tell the user where the fault is
 
-    while (!infile.eof()) {
-        string linebuffer;
-
-        getline(infile, linebuffer);
+    string linebuffer;
+    while (getline(infile, linebuffer)) {
 
         current_line++;
 
@@ -325,7 +323,7 @@ void Keys::reload() {
                           "A bad key/modifier string was found on line (number following)")<<" "<<
                 current_line<<"): "<<linebuffer<<endl;
         }
-    } // end while eof
+    }
 
     keyMode("default");
 }
