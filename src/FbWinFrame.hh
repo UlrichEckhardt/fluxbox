@@ -317,7 +317,6 @@ private:
     typedef std::vector<FbTk::Button *> ButtonList;
     ButtonList m_buttons_left, ///< buttons to the left
         m_buttons_right; ///< buttons to the right
-    typedef std::list<FbTk::TextButton *> LabelList;
     int m_bevel;  ///< bevel between titlebar items and titlebar
     bool m_use_titlebar; ///< if we should use titlebar
     bool m_use_tabs; ///< if we should use tabs (turns them off in external mode only)
