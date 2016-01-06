@@ -275,7 +275,7 @@ private:
 
 class MatchCmd: public WindowHelperBoolCmd {
 public:
-    explicit MatchCmd(const std::string &pat): m_pat(pat.c_str()) { };
+    explicit MatchCmd(const std::string &pat): m_pat(pat) { };
 protected:
     bool real_execute();
 private:

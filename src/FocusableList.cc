@@ -80,14 +80,14 @@ FocusableList::FocusableList(BScreen &scr, const string & pat):
     string pattern;
     parseArgs(pat, options, pattern);
     m_parent = getListFromOptions(scr, options);
-    m_pat.reset(new ClientPattern(pattern.c_str()));
+    m_pat.reset(new ClientPattern(pattern));
 
     init();
 }
 
 FocusableList::FocusableList(BScreen &scr, const FocusableList &parent,
                              const string & pat):
-    m_pat(new ClientPattern(pat.c_str())), m_parent(&parent), m_screen(scr) {
+    m_pat(new ClientPattern(pat)), m_parent(&parent), m_screen(scr) {
 
     init();
 }

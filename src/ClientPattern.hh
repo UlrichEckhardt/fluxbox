@@ -41,10 +41,10 @@ public:
     ClientPattern();
     /**
      * Create the pattern from the given string as it would appear in the
-     * apps file. the bool value returns the character at which
-     * there was a parse problem, or -1.
+     * apps file.
      */
     explicit ClientPattern(const char * str);
+    explicit ClientPattern(std::string const& str);
 
     ~ClientPattern();
 
@@ -94,6 +94,8 @@ public:
     static FbTk::FbString getProperty(WinProperty prop, const Focusable &client);
 
 private:
+    void init(const char * str);
+
     struct Term;
     friend struct Term;
     typedef std::list<Term *> Terms;

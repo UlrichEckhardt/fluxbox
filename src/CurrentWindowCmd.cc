@@ -210,7 +210,7 @@ REGISTER_COMMAND_PARSER(sendtoprevhead, parseIntCmd, void);
 
 FbTk::Command<void> *parseFocusCmd(const string &command, const string &args,
                                    bool trusted) {
-    ClientPattern pat(args.c_str());
+    ClientPattern pat(args);
     if (!pat.error())
         return FbTk::CommandParser<void>::instance().parse("GoToWindow 1 " +
                                                            args);

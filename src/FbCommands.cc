@@ -550,7 +550,7 @@ void ClientPatternTestCmd::execute() {
     atom_fbcmd_result = XInternAtom(dpy, "_FLUXBOX_ACTION_RESULT", False);
 
     FocusableList::parseArgs(m_args, opts, pat);
-    ClientPattern cp(pat.c_str());
+    ClientPattern cp(pat);
 
     if (!cp.error()) {
 

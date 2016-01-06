@@ -68,7 +68,7 @@ private:
 
 class AttachCmd: public FbTk::Command<void> {
 public:
-    explicit AttachCmd(const std::string &pat): m_pat(pat.c_str()) { }
+    explicit AttachCmd(const std::string &pat): m_pat(pat) { }
     void execute();
 private:
     const ClientPattern m_pat;
@@ -77,7 +77,7 @@ private:
 class NextWindowCmd: public FbTk::Command<void> {
 public:
     explicit NextWindowCmd(int option, std::string &pat):
-            m_option(option), m_pat(pat.c_str()) { }
+            m_option(option), m_pat(pat) { }
     void execute();
 private:
     const int m_option;
@@ -87,7 +87,7 @@ private:
 class PrevWindowCmd: public FbTk::Command<void> {
 public:
     explicit PrevWindowCmd(int option, std::string &pat):
-            m_option(option), m_pat(pat.c_str()) { }
+            m_option(option), m_pat(pat) { }
     void execute();
 private:
     const int m_option;
@@ -97,7 +97,7 @@ private:
 class GoToWindowCmd: public FbTk::Command<void> {
 public:
     GoToWindowCmd(int num, int option, std::string &pat):
-            m_num(num), m_option(option), m_pat(pat.c_str()) { }
+            m_num(num), m_option(option), m_pat(pat) { }
     void execute();
     static FbTk::Command<void> *parse(const std::string &command,
                                 const std::string &args, bool trusted);
@@ -180,7 +180,7 @@ public:
       STACKBOTTOM
     };
     explicit ArrangeWindowsCmd(int tile_method, std::string &pat):
-            m_tile_method( tile_method ), m_pat(pat.c_str()) { }
+            m_tile_method( tile_method ), m_pat(pat) { }
     void execute();
 private:
     const int m_tile_method;

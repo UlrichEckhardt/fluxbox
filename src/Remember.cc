@@ -764,7 +764,7 @@ void Remember::reload() {
             string lc_key = toLower(key);
 
             if (pos > 0 && (lc_key == "app" || lc_key == "transient")) {
-                ClientPattern *pat = new ClientPattern(line.c_str() + pos);
+                ClientPattern *pat = new ClientPattern(line.substr(pos));
                 if (!in_group) {
                     if ((err = pat->error()) == 0) {
                         bool transient = (lc_key == "transient");

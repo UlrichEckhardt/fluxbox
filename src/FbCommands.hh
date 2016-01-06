@@ -119,7 +119,7 @@ public:
 class ShowClientMenuCmd: public FbTk::Command<void> {
 public:
     ShowClientMenuCmd(int option, std::string &pat):
-            m_option(option|FocusableList::LIST_GROUPS), m_pat(pat.c_str()) { }
+            m_option(option|FocusableList::LIST_GROUPS), m_pat(pat) { }
     void execute();
     static FbTk::Command<void> *parse(const std::string &command,
                                 const std::string &args, bool trusted);

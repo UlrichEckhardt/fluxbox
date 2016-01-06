@@ -162,11 +162,20 @@ ClientPattern::ClientPattern():
     m_matchlimit(0),
     m_nummatches(0) {}
 
-// parse the given pattern (to end of line)
 ClientPattern::ClientPattern(const char *str):
     m_matchlimit(0),
-    m_nummatches(0)
-{
+    m_nummatches(0) {
+    init(str);
+}
+
+ClientPattern::ClientPattern(std::string const& str):
+    m_matchlimit(0),
+    m_nummatches(0) {
+    init(str.c_str());
+}
+
+// parse the given pattern (to end of line)
+void ClientPattern::init(const char *str) {
     /* A rough grammar of a pattern is:
        PATTERN ::= MATCH+ LIMIT?
        MATCH ::= '(' word ')'
