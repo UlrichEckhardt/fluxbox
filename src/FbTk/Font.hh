@@ -26,6 +26,7 @@
 
 #include "FbString.hh"
 #include "Color.hh"
+#include "NotCopyable.hh"
 #include "Orientation.hh"
 
 namespace FbTk {
@@ -36,7 +37,7 @@ class FbDrawable;
 /**
    Handles the client to fontimp bridge.
 */
-class Font {
+class Font: NotCopyable {
 public:
 
     static const char DEFAULT_FONT[];
