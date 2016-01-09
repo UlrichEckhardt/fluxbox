@@ -52,7 +52,7 @@ public:
 
 
     explicit Font(const char* name = DEFAULT_FONT);
-    virtual ~Font();
+    ~Font();
     /**
         Load a font
         @return true on success, else false and it'll fall back on the last
